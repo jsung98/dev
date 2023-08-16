@@ -1,7 +1,7 @@
 # Eguana Contactus
 
 `Website` : Main Website URL
-`Author` : Owais Safdar  
+`Author` : Jason 
 `DB Table Name` : eguana_contact 
 `Listing Page`  : Eguana Contactus listing page will be "eguana_contactus/index/index" once module is activated'
 
