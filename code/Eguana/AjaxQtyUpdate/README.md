@@ -1,8 +1,3 @@
-Eguana_AjaxQtyUpdate
-============================
-
-`Author` : Jason
-
 ***Short Description***
 
 Run quantity update with minus button, plus button on the Shopping Cart page or My Account > Wish List page
