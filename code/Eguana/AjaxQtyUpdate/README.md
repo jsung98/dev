@@ -1,7 +1,7 @@
 Eguana_AjaxQtyUpdate
 ============================
 
-`Author` : Hyuna
+`Author` : Jason
 
 ***Short Description***
 
