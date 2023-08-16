@@ -1,7 +1,6 @@
 # Eguana SocialLogin
 
 `Website` : Main Website URL
-`Author` : Sultan Zaigham  
 `Module Name` : Eguana_SocialLogin
 
 
