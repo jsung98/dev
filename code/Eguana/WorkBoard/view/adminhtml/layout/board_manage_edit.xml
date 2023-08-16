@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2023 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Zaid
+ * Date: 12/1/23
+ * Time: 4:27 PM
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <update handle="editor"/>
+    <body>
+    <referenceContainer name="content">
+        <uiComponent name="board_add_form"/>
+    </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block name="additional_js" template="Eguana_WorkBoard::additionaljs.phtml"> </block>
+        </referenceContainer>
+    </body>
+</page>

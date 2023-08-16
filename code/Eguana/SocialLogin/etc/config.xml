@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Eguana Team
+* @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+* Created by PhpStorm
+* User: Abbas Ali Butt
+* Date: 12/01/2023
+* Time: 12:27 PM
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <SocialLogin>
+            <general>
+                <sociallogin_mod_enable>1</sociallogin_mod_enable>
+            </general>
+            <kakao>
+                <kakao_enable>1</kakao_enable>
+                <url_info>
+                    <base_url>https://accounts.kakao.com/logout?continue=https://kauth.kakao.com</base_url>
+                </url_info>
+                <kakao_unlink>
+                    <base_url>https://kapi.kakao.com</base_url>
+                    <app_admin_key>4b0cc2b025b942929220cee15f5f1f71</app_admin_key>
+                </kakao_unlink>
+            </kakao>
+        </SocialLogin>
+    </default>
+</config>

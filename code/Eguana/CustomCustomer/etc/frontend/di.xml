@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Hyuna
+ * Date: 04/04/23
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Customer\Controller\Account\ForgotPasswordPost" type="Eguana\CustomCustomer\Controller\Account\ForgotPasswordPost" />
+    <preference for="Magento\Customer\Controller\Account\CreatePost" type="Eguana\CustomCustomer\Controller\Account\CreatePost" />
+    <preference for="Magento\Customer\Controller\Account\EditPost" type="Eguana\CustomCustomer\Controller\Account\EditPost" />
+</config>

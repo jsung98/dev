@@ -1,0 +1,12 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+if ($block->isEnabled()): ?>
+    <div class="field phone_number<?= $block->isRequired()  ? ' required' : '' ?>">
+        <label class="label" for="phone_number">
+            <span><?= $block->escapeHtml(__('Phone number')) ?></span>
+        </label>
+        <div class="control">
+            <input type="text" name="phone_number" id="phone_number" title="<?= $block->escapeHtmlAttr(__('Phone number')) ?>" class="input-text">
+        </div>
+    </div>
+<?php endif; ?>

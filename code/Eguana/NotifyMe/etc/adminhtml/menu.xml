@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Owais
+ * Date: 12/03/21
+ * Time: 7:00 PM
+ */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Eguana_NotifyMe::notifications" title="Notifications" translate="title" module="Eguana_NotifyMe" parent="Magento_Catalog::catalog" sortOrder="70"  resource="Eguana_NotifyMe::notifications"/>
+        <add id="Eguana_NotifyMe::manage_notifications" title="Manage Notifications" translate="title" module="Eguana_NotifyMe" parent="Eguana_NotifyMe::notifications" sortOrder="90" action="notifications/index/index" resource="Eguana_NotifyMe::manage_notifications"/>
+    </menu>
+</config>

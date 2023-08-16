@@ -1,0 +1,22 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="StoreFrontContactUsInputBusinessPartnerTest">
+        <annotations>
+            <title value="Store Frontend input Test"/>
+            <stories value="Show that data as a Business Partner entered while email is enabled "/>
+            <description value="Verify data as a Business Partner entered while email is enabled successfully"/>
+            <features value="admin"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="StoreFrontContactUsPage-02-1"/>
+            <group value="adminContactBP"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="AdminContactConfigurationActionGroup" stepKey="AdminConfiguration">
+                <argument name="adminContactConfigurationData" value="AdminContactConfigurationDataData"/>
+            </actionGroup>
+        </before>
+        <actionGroup ref="StoreFrontContactUsInputBusinessPartnerActionGroup" stepKey="StoreFrontBusinessPartnerContactUs">
+            <argument name="contactUsBusinessPartnerInputData" value="StoreFrontBusinessPartnerInputDataData"/>
+        </actionGroup>
+    </test>
+</tests>

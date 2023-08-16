@@ -1,0 +1,105 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \Magento\Contact\Block\ContactForm $block */
+/** @var \Eguana\Contactus\ViewModel\UserDataProvider $viewModel */
+
+$viewModel = $block->getViewModel();
+?>
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label class="label" for="company name"><span><?= $block->escapeHtml(__('Contact Name/Occupancy')) ?></span></label>
+            <div class="control">
+                <input name="companyname"
+                       id="companyname"
+                       title="<?= $block->escapeHtmlAttr(__('Contact Name/Occupancy')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserCompanyName()) ?>"
+                       class="input-text"
+                       type="text"
+                       placeholder="<?= $block->escapeHtmlAttr(__('Eguana Commerce')) ?>"
+                       data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Your Name')) ?></span></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       title="<?= $block->escapeHtmlAttr(__('Your Name')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                       class="input-text"
+                       placeholder="<?= $block->escapeHtmlAttr(__('Hongil Dong')) ?>"
+                       type="text"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email"
+                       id="email"
+                       title="<?= $block->escapeHtmlAttr(__('Email')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserEmail()) ?>"
+                       class="input-text"
+                       type="email"
+                       placeholder="<?= $block->escapeHtmlAttr(__('Eguana@gmail.com')) ?>"
+                       data-validate="{required:true, 'validate-email':true}"
+                       data-mage-init='{"mage/trim-input":{}}'
+                />
+            </div>
+        </div>
+        <div class="field telephone required">
+            <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone')) ?></span></label>
+            <div class="control">
+                <input name="telephone"
+                       id="telephone"
+                       title="<?= $block->escapeHtmlAttr(__('Phone')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserTelephone()) ?>"
+                       class="input-text"
+                       type="tel"
+                       placeholder="<?= $block->escapeHtmlAttr(__('010-1234-5678')) ?>"
+                       data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field choice required">
+            <input type="checkbox" name="privacy_policy" id="privacy-policy" data-role="privacy-policy" value="1" data-validate="{required:true}" class="checkbox required-entry"/>
+            <label for="privacy-policy"
+                   class="label"><span><?= $block->escapeHtml(__('I have read and agree to the privacy policy.<span>(Required)</span>'),['span'])?></span><a title="<?= $block->escapeHtmlAttr(__('Go to Privacy Policy Page')) ?>" href="<?= $block->getUrl('privacy-policy')?>"><?= $block->escapeHtml(__('Read all')) ?></a></label>
+        </div>
+        <div class="field choice">
+            <input type="checkbox" name="news_letter" id="news-letter" data-role="news-letter" class="checkbox"/>
+            <label for="news-letter"
+                   class="label"><span><?= $block->escapeHtml(__('I agree to receive marketing communications.<span>(Optional)</span>'),['span']) ?></span></label>
+        </div>
+
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit your inquiry')) ?>" class="action submit primary">
+                <span><img src="<?php echo $block->getViewFileUrl('Eguana_Contactus::images/icon_contact.svg'); ?>" /><?= $block->escapeHtml(__('Submit your inquiry')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            }
+        }
+    }
+</script>

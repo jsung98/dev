@@ -1,0 +1,5 @@
+<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
+    <page name="AdminContactConfigurationPage" url="admin/dashboard/" area="admin" module="Eguana_Contactus">
+        <section name="AdminContactConfigurationSection"/>
+    </page>
+</pages>

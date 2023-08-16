@@ -1,0 +1,21 @@
+{
+    "eguana_contact": {
+        "column": {
+            "contact_id": true,
+            "name": true,
+            "type": true,
+            "email": true,
+            "telephone": true,
+            "comment": true,
+            "companyname": true,
+            "creation_time": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        },
+        "index": {
+            "EGUANA_CONTACT_TYPE": true
+        }
+    }
+}

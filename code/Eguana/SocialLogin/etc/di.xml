@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Eguana Team
+* @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+* Created by PhpStorm
+* User: Abbas Ali Butt
+* Date: 19/01/2023
+* Time: 8:29 PM
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Eguana\SocialLogin\Api\Data\SocialLoginInterface" type="Eguana\SocialLogin\Model\SocialLogin"/>
+    <preference for="Eguana\SocialLogin\Api\SocialLoginInterfaceInterface" type="Eguana\SocialLogin\Model\SocialLoginRepository"/>
+    <type name="Magento\Customer\Controller\Account\Logout">
+        <plugin name="logoutSuccess" type="Eguana\SocialLogin\Plugin\Account\CustomerLogout" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Customer\Model\ResourceModel\CustomerRepository">
+        <plugin name="customer_delete_action" type="Eguana\SocialLogin\Plugin\DeleteCustomer" />
+    </type>
+</config>

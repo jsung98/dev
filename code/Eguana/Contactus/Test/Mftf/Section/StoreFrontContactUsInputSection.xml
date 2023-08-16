@@ -1,0 +1,12 @@
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="StoreFrontContactUsInputSection">
+        <element name="clickOnClient" type="button" selector="(//input[@value='1'])[1]" timeout="1000"/>
+        <element name="enterName" type="input" selector="//input[@id='name']" timeout="1000"/>
+        <element name="enterEmail" type="input" selector="//input[@id='email']" timeout="1000"/>
+        <element name="enterPhone" type="input" selector="//input[@id='telephone']" timeout="1000"/>
+        <element name="enterMessage" type="input" selector="//textarea[@id='comment']" timeout="1000"/>
+        <element name="clickOnAccept" type="button" selector="//input[@type='checkbox']" timeout="1000"/>
+        <element name="clickOnSubmit" type="button" selector="//button[@title='Submit']//span" timeout="1000"/>
+
+    </section>
+</sections>

@@ -1,0 +1,10 @@
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AdminContactDisableEmailActionGroup">
+        <amOnPage stepKey="amOnAdminConfigPage" url="{{AdminContactDisableEmailPage.url}}"/>
+        <click selector="{{AdminContactDisableEmailSection.clickOnStore}}" stepKey="OpenAdminStore"/>
+        <click selector="{{AdminContactDisableEmailSection.clickOnConfig}}" stepKey="OpenAdminStoreConfiguration"/>
+        <click selector="{{AdminContactDisableEmailSection.clickOnContact}}" stepKey="OpenAdminContactConfiguration"/>
+        <click selector="{{AdminContactDisableEmailSection.clickOnDisableEmail}}" stepKey="DisableEmail"/>
+        <click selector="{{AdminContactDisableEmailSection.clickOnSave}}" stepKey="SaveConfiguration"/>
+    </actionGroup>
+</actionGroups>

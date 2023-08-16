@@ -1,0 +1,27 @@
+{
+    "eguana_product_alert_selling": {
+        "column": {
+            "alert_selling_id": true,
+            "customer_email": true,
+            "customer_mobile": true,
+            "product_id": true,
+            "website_id": true,
+            "store_id": true,
+            "add_date": true,
+            "send_date": true,
+            "send_count": true,
+            "status": true
+        },
+        "index": {
+            "EGUANA_PRODUCT_ALERT_SELLING_PRODUCT_ID": true,
+            "EGUANA_PRODUCT_ALERT_SELLING_WEBSITE_ID": true,
+            "EGUANA_PRODUCT_ALERT_SELLING_STORE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "EGUANA_PRD_ALERT_SELLING_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "EGUANA_PRODUCT_ALERT_SELLING_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID": true,
+            "EGUANA_PRODUCT_ALERT_SELLING_STORE_ID_STORE_STORE_ID": true
+        }
+    }
+}

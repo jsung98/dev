@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock class="Eguana\NotifyMe\Block\Product\NotifyMe" name="productalert.stock" template="Eguana_NotifyMe::product/view.phtml">
+            <action method="setHtmlClass">
+                <argument name="value" xsi:type="string">coming-soon</argument>
+            </action>
+            <action method="setSignupLabel">
+                <argument translate="true" name="value" xsi:type="string">Notify me</argument>
+            </action>
+            <arguments>
+                <argument name="view_model" xsi:type="object">Eguana\NotifyMe\ViewModel\Notification</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="content.aside">
+            <referenceBlock name="related.product.addto">
+                <block class="Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist"
+                       name="related.product.addto.notification" as="notification" before="compare"
+                       template="Eguana_NotifyMe::catalog/product/list/addto/notification.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Eguana\NotifyMe\ViewModel\Notification</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+           <!-- <referenceBlock name="upsell.product.addto">
+                <block class="Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist"
+                       name="upsell.product.addto.notification" as="notification" before="compare"
+                       template="Eguana_NotifyMe::catalog/product/list/addto/notification.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Eguana\NotifyMe\ViewModel\Notification</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>-->
+            <referenceBlock name="catalog.product.related" template="Eguana_NotifyMe::product/list/items.phtml">
+            </referenceBlock>
+        </referenceContainer>
+        <referenceBlock name="product.info" template="Eguana_NotifyMe::product/view/form.phtml">
+        </referenceBlock>
+    </body>
+</page>

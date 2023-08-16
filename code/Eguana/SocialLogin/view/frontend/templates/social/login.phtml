@@ -1,0 +1,37 @@
+<?php
+/**
+ * @author Eguana Team
+ * @copyright Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Abbas Ali Butt
+ * Date: 13/01/2023
+ * Time: 6:11 PM
+ */
+
+/** @var \Eguana\SocialLogin\Block\SocialLogin\Login $block */
+/** @var $escaper Magento\Framework\Escaper */
+$helper = $block->getHelper();
+$block->unSetSession();
+?>
+<?php if ($helper->isEnabledInFrontend()):?>
+    <?php
+    $kakaoUrl = $block->getUrl('sociallogin/kakaologin/connect');
+    ?>
+    <div class="social-login">
+        <?php if ($helper->isEnabledKakao()):?>
+            <a class="kakao-button-link"
+               href="javascript:void(0);" rel="nofollow"
+               data-role="eguana_sociallogin"
+               data-href="<?= $escaper->escapeUrl($kakaoUrl) ?>">
+                <img src="<?=$block->escapeUrl($block->getViewFileUrl('Eguana_SocialLogin::images/kakao.svg'));?>" />
+                <span><?= $escaper->escapeHtml(__('Login with Kakao')) ?></span>
+            </a>
+        <?php endif; ?>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "socialLoginJs": {}
+    }
+}
+</script>
+<?php endif; ?>

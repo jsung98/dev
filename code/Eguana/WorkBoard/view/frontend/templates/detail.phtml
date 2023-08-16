@@ -1,0 +1,58 @@
+<?php
+/** @var \Eguana\WorkBoard\ViewModel\Detail $viewmodel */
+/** @var \Eguana\WorkBoard\Block\Index\Detail $block */
+$viewmodel = $block->getData('board_detail');
+$board = $viewmodel->getBoardDetail();
+?>
+<main id="main" role="main" ap-type="content">
+    <div class="board-detail">
+        <div class="l-wrap l-skinny">
+            <div class="content static parbase">
+                <div class="detail-thumb">
+                    <img src="<?= $block->escapeUrl($viewmodel->getImageUrl($board->getThumbnailImage()))?>"
+                         alt="<?= $block->escapeHtmlAttr($board->getTitle());?>">
+                </div>
+                <div class="l-wrap">
+                    <div class="detail-header">
+                        <div class="basic">
+                            <h1 class="detail-h">
+                                <?= $block->escapeHtml($board->getTitle())?>
+                            </h1>
+                            <span class="detail-date">
+                                <span class="category">
+                                    <?= $block->escapeHtml($viewmodel->getCategoryName($board['category']));?>
+                                </span>
+                                <span
+                                    class="subtitle"><?= $block->escapeHtml($viewmodel->getSubTitle())?>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-pd">
+                    <div class="detail-desc">
+                        <?= /* @noEscape */ $viewmodel->getBoardDiscription($board['description']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<?php if (!empty($viewmodel->getBoardCollection())): ?>
+    <ul class="board-related-list">
+        <?php $boardcollection = $viewmodel->getBoardCollection();
+        foreach ($boardcollection as $board): ?>
+            <li>
+                <a href="<?= $block->escapeUrl($viewmodel->getDetailPageUrl() . $board->getIdentifier())?>">
+                    <img src="<?= $block->escapeUrl($viewmodel->getImageUrl($board->getThumbnailImage()))?>"
+                         alt="<?= $block->escapeHtmlAttr($board->getTitle());?>"/>
+                    <div class="overlay">
+                        <p><?= $block->escapeHtml($viewmodel->getCategoryName($board['category']));?></p>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach;?>
+    </ul>
+<?php endif; ?>
+
+

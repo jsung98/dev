@@ -1,0 +1,23 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="StoreFrontContactUsWithDisableEmailTest">
+        <annotations>
+            <title value="Store Front Validate input Test"/>
+            <stories value="Show input are filled as client while email option is disabled"/>
+            <description value="Verify input are filled as client while email option is disabled successfully"/>
+            <features value="admin"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="StoreFrontContactUsPage-01-2"/>
+            <group value="adminContactClientDE"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+        <actionGroup ref="AdminContactDisableEmailActionGroup" stepKey="AdminDisableEmailConfiguration">
+        </actionGroup>
+        </before>
+        <after>
+        <actionGroup ref="StoreFrontContactUsInputValidationActionGroup" stepKey="StoreFrontValidateContactUs">
+            <argument name="contactUsInputData" value="StoreFrontInputDataData"/>
+        </actionGroup>
+        </after>
+    </test>
+</tests>

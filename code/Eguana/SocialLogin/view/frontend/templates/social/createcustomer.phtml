@@ -1,0 +1,96 @@
+<?php
+/**
+ * @author Eguana Team
+ * @copyright Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Abbas Ali Butt
+ * Date: 12/01/2023
+ * Time: 10:59 PM
+ */
+/**
+ * @var $block \Eguana\SocialLogin\Block\SocialLogin\CreateCustomer
+ */
+/** @var $escaper Magento\Framework\Escaper */
+?>
+<?php
+$storeCode = $block->getCurrentStoreCode();
+$n = $block->getRequest()->getParam('name');
+$g = $block->getRequest()->getParam('email');
+$db = $block->getRequest()->getParam('birthday');
+$dby = $block->getRequest()->getParam('birthyear');
+$ph = $block->getRequest()->getParam('phone_number');
+$gen = $block->getRequest()->getParam('gender');
+$pr = ['name'=>$n, 'email'=>$g, 'birthday' => $db, 'gender'=> $gen, 'birthyear' => $dby, 'phone_number' => $ph  ];
+?>
+<div id="myModel">
+    <form method="post" id="eguana-form-validate" enctype="multipart/form-data" autocomplete="off"
+          data-mage-init='{"validation":{}}' data-hasrequired="<?= $escaper->escapeHtml(__('* Required Fields')) ?>">
+        <?= /* @noEscape */ $block->getBlockHtml('formkey'); ?>
+        <fieldset class="fieldset">
+            <div class="field note"><?= $escaper->escapeHtml(__('Welcome to use Facebook and Kakao accounts to quickly log in. After setting, you can directly log in with Facebook and Kakao accounts!')) ?></div>
+            <div class="field choice member-legend">
+                <div class="control">
+                    <input type="radio" id="member" name="member" data-validate="{required:true}" value="ismember" checked="checked">
+                    <label class="label" for="member">
+                        <span><?= $escaper->escapeHtml(__("I am a member of Honeynaps! Login now to complete the binding")) ?></span>
+                    </label>
+                </div>
+            </div>
+            <div class="field email required">
+                <label class="label" for="email"><span><?= $escaper->escapeHtml(__('Email')) ?></span></label>
+                <div class="control">
+                    <input name="login[username]"
+                           id="email"
+                           title="<?= $escaper->escapeHtml(__('Email')) ?>"
+                           class="input-text"
+                           type="email"
+                           value="<?php echo $g ?>"
+                           data-validate="{required:true, 'validate-email':true}"
+                           placeholder="<?= $escaper->escapeHtml(__('Email')) ?>"
+                           aria-required="true">
+                </div>
+            </div>
+            <div class="field password required">
+                <label class="label" for="password"><span><?= $escaper->escapeHtml(__('Password')) ?></span></label>
+                <div class="control">
+                    <input name="login[password]"
+                           id="password"
+                           title="<?= $escaper->escapeHtml(__('Password')) ?>"
+                           class="input-text"
+                           type="password"
+                           value=""
+                           data-validate="{required:true}"
+                           placeholder="<?= $escaper->escapeHtml(__('Password')) ?>"
+                           aria-required="true">
+                </div>
+            </div>
+            <div class="field choice member-legend">
+                <div class="control">
+                    <input type="radio" id="not-a-member" name="member" value="notamember">
+                    <label class="label" for="not-a-member">
+                        <span><?= $escaper->escapeHtml(__("Join HoneyNpas member! Complete binding")) ?></span>
+                    </label>
+                </div>
+            </div>
+            <div class="sociallogin-form-actions">
+                <button class="action login" type="submit" id="login" data-role="action" data-action-name="Login">
+                    <span><?= $escaper->escapeHtml(__('OK')) ?></span>
+                </button>
+                <button class="cancel" type="button" id="cancel" data-role="action" data-action-name="Cancel">
+                    <span><?= $escaper->escapeHtml(__('Cancel')) ?></span>
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "createCustomerForm": {
+            "url":"<?= $escaper->escapeUrl($block->getFormAction()) ?>",
+            "customerurl":"<?= $escaper->escapeUrl($block->getUrl('customer/account/login')) ?>",
+            "registrationurl":"<?= $escaper->escapeUrl($block->getUrl('customer/account/create',$pr)) ?>"
+         }
+    }
+}
+</script>

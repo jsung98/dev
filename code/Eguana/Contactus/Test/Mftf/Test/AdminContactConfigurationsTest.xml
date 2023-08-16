@@ -1,0 +1,19 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="AdminContactConfigurationsTest">
+        <annotations>
+            <title value="Admin Config Test"/>
+            <stories value="Show that Admin config saved  "/>
+            <description value="Verify that Admin config saved successfully  "/>
+            <features value="admin"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="AdminLoginPage-01"/>
+            <group value="adminContactConf"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+        </before>
+        <actionGroup ref="AdminContactConfigurationActionGroup" stepKey="AdminConfiguration">
+            <argument name="adminContactConfigurationData" value="AdminContactConfigurationDataData"/>
+        </actionGroup>
+    </test>
+</tests>

@@ -1,0 +1,56 @@
+<?php
+/** @var \Eguana\WorkBoard\Block\View $block */
+$baseUrl = $block->getBaseUrl();
+?>
+<?php $result = $block->getBoardCollection();?>
+<?php if ($result && count($result)): ?>
+    <div class="work-container">
+        <h2 class="hide"><?= $block->escapeHtml(__('Work'))?></h2>
+        <div class="work-wrapper">
+            <?php foreach ($result as $board): ?>
+                <div class="work-slide">
+                    <img class="desktop-image" src="<?= $block->escapeUrl($block->getImageUrl($board->getThumbnailImage())); ?>" alt="<?= $block->escapeHtmlAttr($board->getTitle()) ?>">
+                    <img class="mobile-image" src="<?= $block->escapeUrl($block->getImageUrl($board->getMobileThumbnailImage(), $board->getThumbnailImage()))?>" alt="<?= $block->escapeHtmlAttr($board->getTitle()) ?>">
+                    <div class="contents">
+                        <div class="project-info">
+                            <b><?= $block->escapeHtml(__('We’ve Worked With'))?></b>
+                            <h3 class="work-title" data-word="<?= $block->escapeHtmlAttr($board->getTitle()) ?>"><span><?= $block->escapeHtml($board->getTitle()) ?></span></h3>
+                            <p class="work-sub-title"><?= $block->escapeHtml($board->getSubTitle()) ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="custom-pager">
+            <div class="action">
+                <a class="view-more" href="<?= $block->escapeUrl($block->getUrl('work.html')) ?>" title="<?= $block->escapeHtmlAttr(__('Go to work page'))?>">
+                    <?= $block->escapeHtml(__('View more'))?>
+                    <img src="<?php echo $block->getViewFileUrl('Eguana_WorkBoard::images/icon_right.svg'); ?>" />
+                </a>
+            </div>
+            <div class="slick-control">
+                <div class="prev">
+                    <img title="<?= $block->escapeHtmlAttr(__('Go to previous slide'))?>" alt="<?= $block->escapeHtmlAttr(__('Go to previous slide'))?>" src="<?php echo $block->getViewFileUrl('Eguana_WorkBoard::images/icon_prev.svg'); ?>" />
+                </div>
+                <div class="buttons">
+                    <button class="pause">
+                        <img title="<?= $block->escapeHtmlAttr(__('Stop autoplay slides'))?>" alt="<?= $block->escapeHtmlAttr(__('Stop autoplay slides'))?>" src="<?php echo $block->getViewFileUrl('Eguana_WorkBoard::images/icon_stop.svg'); ?>" />
+                    </button>
+                    <button class="play active">
+                        <img title="<?= $block->escapeHtmlAttr(__('Start autoplay slides'))?>" alt="<?= $block->escapeHtmlAttr(__('Start autoplay slides'))?>" src="<?php echo $block->getViewFileUrl('Eguana_WorkBoard::images/icon_play.svg'); ?>" />
+                    </button>
+                </div>
+                <div class="next">
+                    <img title="<?= $block->escapeHtmlAttr(__('Move to the next slide'))?>" alt="<?= $block->escapeHtmlAttr(__('Move to the next slide'))?>" src="<?php echo $block->getViewFileUrl('Eguana_WorkBoard::images/icon_next.svg'); ?>" />
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+          "Work":{}
+      }
+    }
+</script>

@@ -1,0 +1,34 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="AllContactTest">
+        <annotations>
+            <title value="All cases Runs at once"/>
+            <stories value="Show the cases Runs at once"/>
+            <description value="Verify cases Runs at once "/>
+            <features value="admin"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="admin-01"/>
+            <group value="allContactCases"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="AdminContactConfigurationActionGroup" stepKey="AdminConfiguration">
+                <argument name="adminContactConfigurationData" value="AdminContactConfigurationDataData"/>
+            </actionGroup>
+            <actionGroup ref="StoreFrontContactUsInputBusinessPartnerActionGroup" stepKey="StoreFrontBusinessPartnerContactUs">
+                <argument name="contactUsBusinessPartnerInputData" value="StoreFrontBusinessPartnerInputDataData"/>
+            </actionGroup>
+            <actionGroup ref="StoreFrontContactUsInputValidationActionGroup" stepKey="StoreFrontValidateContactUs">
+                <argument name="contactUsInputData" value="StoreFrontInputDataData"/>
+            </actionGroup>
+            <actionGroup ref="AdminContactDisableEmailActionGroup" stepKey="AdminDisableEmailConfiguration"/>
+            <actionGroup ref="StoreFrontContactUsInputBusinessPartnerActionGroup" stepKey="StoreFrontBusinessPartnerDisableEmailContactUs">
+                <argument name="contactUsBusinessPartnerInputData" value="StoreFrontBusinessPartnerInputDataData"/>
+            </actionGroup>
+            <actionGroup ref="StoreFrontContactUsInputValidationActionGroup" stepKey="StoreFrontValidateDisableContactUs">
+                <argument name="contactUsInputData" value="StoreFrontInputDataData"/>
+            </actionGroup>
+
+        </before>
+
+    </test>
+</tests>

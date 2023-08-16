@@ -1,0 +1,43 @@
+{
+    "eguana_board": {
+        "column": {
+            "board_id": true,
+            "title": true,
+            "description": true,
+            "thumbnail_image": true,
+            "mobile_thumbnail_image": true,
+            "category": true,
+            "is_active": true,
+            "main_active": true,
+            "position": true,
+            "subtitle": true,
+            "identifier": true,
+            "meta_title": true,
+            "meta_keywords": true,
+            "meta_description": true,
+            "creation_time": true,
+            "update_time": true
+        },
+        "index": {
+            "EGUANA_BOARD_TITLE_DESCRIPTION": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "eguana_board_store": {
+        "column": {
+            "board_id": true,
+            "store_id": true,
+            "category": true
+        },
+        "index": {
+            "EGUANA_BOARD_STORE_STORE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "EGUANA_BOARD_STORE_BOARD_ID_EGUANA_BOARD_BOARD_ID": true,
+            "EGUANA_BOARD_STORE_STORE_ID_STORE_STORE_ID": true
+        }
+    }
+}

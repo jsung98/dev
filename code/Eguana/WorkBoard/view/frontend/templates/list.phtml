@@ -1,0 +1,63 @@
+<?php
+/** @var \Eguana\WorkBoard\Block\Index\Index $block */
+?>
+<?php $result = $block->getBoardCollection();
+    $categories = $block->getCategory();
+?>
+<?php if ($result && count($result)): ?>
+    <div class="work-filter">
+        <button id="all" type="button" class="active"><?= $block->escapeHtml(__('All'))?></button>
+        <?php foreach ($categories as $category): ?>
+            <?php $category = str_replace(' ', '', $category)?>
+            <button id="<?= $block->escapeHtmlAttr($category)?>" type="button"><?= $block->escapeHtml($category)?></button>
+        <?php endforeach; ?>
+    </div>
+    <div class="work-list">
+        <h2 class="hide"><?= $block->escapeHtml(__('Work List'))?></h2>
+        <ul>
+            <?php foreach ($result as $board): ?>
+                <?php $categoryName = str_replace(' ', '', $block->getCategoryName($board->getData('category')))?>
+                <?php $categoryNameClass = str_replace(',', ' ', $block->getCategoryName($board->getData('category')))?>
+                <li class="active <?= $block->escapeHtmlAttr($categoryNameClass);?>">
+                    <div class="work-thumbnail">
+                        <div class="project-img" style="background-image: url('<?= $block->escapeUrl($block->getImageUrl($board->getThumbnailImage()))?>')"></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="work-info">
+                        <b class="work-category"><?= $block->escapeHtml($categoryName)?></b>
+                        <h3 class="work-title"><?= $block->escapeHtml($board->getTitle())?></h3>
+                        <p class="work-sub-title"><?= $block->escapeHtml($board->getSubTitle())?></p>
+                    </div>
+                    <?php if($board->getDescription()):?>
+                        <a class="work-link" href="javascript:void(0)" data-trigger="<?= $block->escapeHtml($board->getData('board_id'))?>trigger"><?= $block->escapeHtml(__('View Details'))?></a>
+                        <div data-bind="mageInit: {
+                            'Magento_Ui/js/modal/modal':{
+                                'type': 'popup',
+                                'modalClass': 'work-popup',
+                                'title': '<?= $block->escapeHtml($board->getTitle())?>',
+                                'trigger': '[data-trigger=<?= $block->escapeHtml($board->getData('board_id'))?>trigger]',
+                                buttons: []
+                            }}" style="display: none;">
+                            <div class="content">
+                                <?= /* @noEscape */ $board->getDescription()?>
+                            </div>
+                        </div>
+                    <?php endif;?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php else: ?>
+    <div class="account-empty">
+        <span>
+            <?= $block->escapeHtml(__('There is no work.')); ?>
+        </span>
+    </div>
+<?php endif ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+          "Work":{}
+      }
+    }
+</script>

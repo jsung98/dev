@@ -1,0 +1,131 @@
+//
+//  Variables
+//  _____________________________________________
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .sociallogin-login-createcustomer {
+        .column.main {
+            form {
+                .fieldset > .field.note {
+                    .lib-font-size(12);
+                    background-color: #F9F9F9;
+                    line-height: 18px;
+                    color: @primary__color__light;
+                    font-weight: @font-weight__semibold;
+                    margin-bottom: 32px;
+                    padding: @layout__width-xs-indent;
+
+                    p {
+                        margin-bottom: 0;
+                        text-align: center;
+                    }
+                }
+
+                .field.password + .field.member-legend {
+                    margin-top: 60px;
+                }
+
+                .sociallogin-form-actions {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-box-align(center);
+                    justify-content: center;
+                    margin-left: -@indent__xs;
+                    margin-right: -@indent__xs;
+
+                    button {
+                        &.login {
+                            .lib-button-primary();
+                        }
+                        .lib-button-l() !important;
+                        margin: 0 @indent__xs;
+                        width: 100%;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    .social-login {
+        font-size: 0;
+        text-align: center;
+        margin-top: 23px;
+    }
+
+    .facebook-button-link,
+    .kakao-button-link {
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0 4px;
+        padding: 14px;
+        width: 48px;
+        height: 48px;
+
+        img {
+            display: block;
+        }
+    }
+
+    .facebook-button-link {
+        background: #1B74E4;
+    }
+
+    .kakao-button-link {
+        background: #FEE500;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .sociallogin-login-createcustomer {
+        .column.main {
+            form {
+                .fieldset > .field.note {
+                    margin-top: -32px;
+                    margin-left: -@layout__width-xs-indent;
+                    margin-right: -@layout__width-xs-indent;
+                }
+
+                .field.email,
+                .field.password {
+                    padding: 0 16px;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .sociallogin-login-createcustomer {
+        .column.main {
+            form {
+                min-width: 600px;
+                width: 50%;
+
+                .fieldset > .field.note {
+                    .lib-font-size(16);
+                    line-height: 24px;
+                }
+
+                .field.email,
+                .field.password {
+                    padding: 0 32px;
+                }
+            }
+        }
+    }
+}

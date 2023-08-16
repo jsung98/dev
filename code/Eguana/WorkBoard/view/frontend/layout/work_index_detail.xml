@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2023 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Zaid
+ * Date: 12/1/23
+ * Time: 4:27 PM
+ */
+-->
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Board</title>
+    </head>
+    <update handle="customer_account"/>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Board/Event</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="breadcrumbs">
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Home</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Home</item>
+                    <item name="label" xsi:type="string" translate="true">Home</item>
+                    <item name="link" xsi:type="string">{{baseUrl}}</item>
+                </argument>
+            </action>
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Brand</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Brand</item>
+                    <item name="label" xsi:type="string" translate="true">Brand</item>
+                    <item name="link" xsi:type="string">brand.html</item>
+                </argument>
+            </action>
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Board</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Board</item>
+                    <item name="label" xsi:type="string" translate="true">Board</item>
+                </argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Eguana\WorkBoard\Block\Index\Detail" name="board_detail" template="Eguana_WorkBoard::detail.phtml">
+                <arguments>
+                    <argument name="board_detail" xsi:type="object">Eguana\WorkBoard\ViewModel\Detail</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

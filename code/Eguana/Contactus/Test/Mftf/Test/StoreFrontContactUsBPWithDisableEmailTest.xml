@@ -1,0 +1,23 @@
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="StoreFrontContactUsBPWithDisableEmailTest">
+        <annotations>
+            <title value="Store Front Validate input Test"/>
+            <stories value="Show that input data as a Business Partner entered while email is disabled "/>
+            <description value="Verify input data as a Business Partner entered while email is disabled successfully"/>
+            <features value="admin"/>
+            <severity value="MAJOR"/>
+            <testCaseId value="StoreFrontContactUsPage-02-2"/>
+            <group value="adminContactBPDisableEmail"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="AdminContactDisableEmailActionGroup" stepKey="AdminDisableEmailConfiguration">
+            </actionGroup>
+        </before>
+        <after>
+            <actionGroup ref="StoreFrontContactUsInputBusinessPartnerActionGroup" stepKey="StoreFrontBusinessPartnerContactUs">
+                <argument name="contactUsBusinessPartnerInputData" value="StoreFrontBusinessPartnerInputDataData"/>
+            </actionGroup>
+        </after>
+    </test>
+</tests>

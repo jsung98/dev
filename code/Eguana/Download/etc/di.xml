@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="downloadform_download_listing_data_source" xsi:type="string">Eguana\Download\Model\ResourceModel\Download\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Eguana\Download\Controller\Index\DownloadSuccess">
+        <arguments>
+            <argument name="downloadRepository" xsi:type="object">Eguana\Download\Model\DownloadRepository</argument>
+            <argument name="downloadFactory" xsi:type="object">Eguana\Download\Api\Data\DownloadInterface</argument>
+        </arguments>
+    </type>
+    <preference for="Eguana\Download\Api\DownloadRepositoryInterface" type="Eguana\Download\Model\DownloadRepository"/>
+    <preference for="Eguana\Download\Api\Data\DownloadInterface" type="Eguana\Download\Model\Download"/>
+    <preference for="Eguana\Download\Api\Data\DownloadSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

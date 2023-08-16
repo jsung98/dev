@@ -1,0 +1,9 @@
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="AdminContactDisableEmailSection">
+        <element name="clickOnStore" type="button" selector="//li[@data-ui-id='menu-magento-backend-stores']//span" timeout="1000"/>
+        <element name="clickOnConfig" type="button" selector="(//span[contains(text(),'Configuration')])[2]" timeout="1000"/>
+        <element name="clickOnContact" type="button" selector="(//span[contains(text(),'Contacts')])" timeout="1000"/>
+        <element name="clickOnDisableEmail" type="select" selector="//select[@id='contact_email_enabled']//option[@value='0']" timeout="1000"/>
+        <element name="clickOnSave" type="button" selector="(//span[contains(text(),'Save Config')])[1]" timeout="1000"/>
+    </section>
+</sections>

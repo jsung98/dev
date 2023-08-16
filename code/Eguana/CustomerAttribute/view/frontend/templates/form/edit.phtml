@@ -1,0 +1,28 @@
+<?php
+/** @var Escaper $escaper */
+/** @var Edit $block */
+use Magento\Customer\Block\Form\Edit;
+use Magento\Framework\Escaper;
+$customer = $block->getCustomer();
+?>
+<div class="field phone_number required">
+    <label class="label" for="phone_number">
+        <span><?= $escaper->escapeHtml(__('Phone number'))?></span>
+    </label>
+    <div class="control">
+        <input type="text" name="phone_number" id="phone_number"
+            <?php
+            if ($customer->getCustomAttribute('phone_number')) {
+                ?>
+                value ="<?= $customer->getCustomAttribute('phone_number')->getValue() ?>"
+                <?php
+            }
+            ?>
+               title="<?= $escaper->escapeHtml(__('Phone number'))?>"
+               placeholder="<?= $escaper->escapeHtmlAttr(__('Only numbers except - can be entered')) ?>"
+               maxlength="11"
+               pattern="[0-9]"
+               data-validate="{required:true, 'validate-number':true}"
+               class="input-text">
+    </div>
+</div>

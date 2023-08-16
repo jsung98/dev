@@ -1,0 +1,96 @@
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+*/
+
+& when (@media-common = true) {
+    .success {
+        text-align: center;
+
+        p {
+            color: @primary__color__darker;
+            line-height: 22px;
+            margin: 0;
+        }
+
+        .actions-toolbar {
+            margin-top: 54px;
+
+            .secondary {
+                margin-top: 24px;
+                line-height: 22px;
+
+                a {
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+
+    .customer-account-createsuccess,
+    .customer-account-forgotpasswordsuccess {
+        .page-main > .page-title-wrapper {
+            .lib-icon-font(
+                @icon-checkmark,
+                @_icon-font-size: 22px,
+                @_icon-font-color: @color-white,
+                @_icon-font-display: block
+            );
+            text-align: center;
+
+            &:before {
+                background: @theme__color__primary;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 32px;
+                width: 64px;
+                height: 64px;
+            }
+
+            .page-title {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .success {
+        p {
+            font-size: 18px;
+            line-height: 34px;
+        }
+
+        .actions-toolbar {
+            margin-top: 72px;
+
+            .secondary {
+                font-size: 18px;
+                line-height: 34px;
+                margin-top: 32px;
+
+                a {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+
+    .customer-account-createsuccess,
+    .customer-account-forgotpasswordsuccess {
+        .page-main > .page-title-wrapper {
+            &:before {
+                font-size: 46px;
+                width: 128px;
+                height: 128px;
+                margin-bottom: 48px;
+            }
+        }
+    }
+}

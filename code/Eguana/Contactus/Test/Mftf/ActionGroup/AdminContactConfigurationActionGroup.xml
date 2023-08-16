@@ -1,0 +1,15 @@
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="AdminContactConfigurationActionGroup">
+        <arguments>
+            <argument name="adminContactConfigurationData"/>
+        </arguments>
+        <amOnPage stepKey="amOnAdminConfigPage" url="{{AdminContactConfigurationPage.url}}"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnStore}}" stepKey="OpenAdminStore"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnConfig}}" stepKey="OpenAdminStoreConfiguration"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnContact}}" stepKey="OpenAdminContactConfiguration"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnEnableModule}}" stepKey="EnableModule"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnEnableEmail}}" stepKey="EnableEmail"/>
+        <fillField userInput="{{adminContactConfigurationData.Email}}" selector="{{AdminContactConfigurationSection.enterEmail}}" stepKey="EnterEmail"/>
+        <click selector="{{AdminContactConfigurationSection.clickOnSave}}" stepKey="SaveConfiguration"/>
+    </actionGroup>
+</actionGroups>

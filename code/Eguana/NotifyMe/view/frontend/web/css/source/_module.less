@@ -1,0 +1,120 @@
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+*/
+
+& when (@media-common = true) {
+    .notify {
+        .lib-link(
+            @_link-color: @color-white,
+            @_link-text-decoration: none,
+            @_link-color-visited: @color-white,
+            @_link-text-decoration-visited: none,
+            @_link-color-hover: @color-white,
+            @_link-text-decoration-hover: none,
+            @_link-color-active: @color-white,
+            @_link-text-decoration-active: none
+        );
+        .lib-button-primary(
+            @_button-background: @theme__color__primary,
+            @_button-border: 1px solid @theme__color__primary,
+            @_button-background-hover: @panel__background-color,
+            @_button-border-hover: 1px solid @panel__background-color,
+            @_button-background-active: @panel__background-color,
+            @_button-border-active: 1px solid @panel__background-color,
+            @_button-padding: 14px 0,
+            @_button-line-height: 34px,
+            @_button-font-size: 18px,
+            @_button-color: @color-white,
+            @_button-color-hover: @color-white,
+            @_button-color-active: @color-white
+        );
+        .lib-button-responsive();
+        border-radius: 100px;
+        display: block;
+
+        &:before {
+            background-image: url('../Eguana_NotifyMe/images/alarm.svg');
+            background-size: contain;
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+
+        > span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .notification-form {
+        .fieldset {
+            > .field {
+                &.note {
+                    color: @primary__color__darker;
+                    text-align: center;
+                }
+
+                &:not(.note){
+                    text-align: left;
+
+                    &:not(:last-child) {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .notification-form {
+        .fieldset {
+            > .field {
+                &.note {
+                    margin-bottom: 36px;
+                }
+            }
+        }
+    }
+
+    .notify {
+        .lib-button-revert-secondary-size(
+            @_button-font-size: 14px,
+            @_button-line-height: 22px,
+            @_button-padding: 8px 0
+        );
+        font-weight: @font-weight__heavier;
+    }
+
+    .notify-modal {
+        .modal-footer {
+            padding-top: 4px;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .notify {
+        &:before {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .notify-modal {
+        .modal-footer {
+            padding-top: @indent__base;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<div class="checkout-success">
+    <div class="order-items">
+        <?php
+        /** @var Eguana\CheckoutSuccess\Block\Onepage\Success $this */
+        $order = $this->getOrder();
+        ?>
+        <?php /** @var \Magento\Sales\Model\Order\Item[] $item */
+        foreach ($this->getOrderItems() as $item): ?>
+            <?php /** @var \Magento\Catalog\Model\Product $product */
+             $product = $item->getProduct(); ?>
+            <img src="<?= $this->escapeHtml($this->getImageHelper()->init($product, 'mini_cart_product_thumbnail')->getUrl()); ?>" />
+            <p class="product-name"><?= $this->escapeHtml(__('Product name: %1', $product->getName())) ?></p>
+            <p class="qty"><?= $this->escapeHtml(__('Quantity: %1', $item->getQtyOrdered())) ?></p>
+            <?php if (!empty($item->getProductOptions()['attributes_info'])): ?>
+            <?php $attributes = $item->getProductOptions()['attributes_info']; ?>
+                <?php foreach($attributes as $attribute):?>
+                    <p class="attribute-label"><?= $attribute['label'] ?>: <?= $attribute['value'] ?></p>
+                <?php endforeach;?>
+            <?php endif; ?>
+            <?php if ($item->getOriginalPrice() != $item->getBasePrice()): ?>
+                <span class="old-price">
+                <?= /* @noEscape */  $this->getFormattedPrice($item->getOriginalPrice())?>
+                </span>
+            <?php endif; ?>
+                <p><?= /* @noEscape */ $this->getFormattedPrice($item->getBasePrice())?></p>
+        <?php endforeach;?>
+        <hr>
+        <p class="subtotal"><?= /* @noEscape */ __('Subtotal: %1', $this->getFormattedPrice($order->getSubTotal()))?></p>
+        <p class="shipping-amount"><?= /* @noEscape */ __('Delivery charge: %1', $this->getFormattedPrice($order->getShippingAmount())); ?></p>
+        <p class="total"><?= /* @noEscape */ __('Total price: %1', $this->getFormattedPrice($order->getGrandTotal())); ?></p>
+    </div>
+</div>

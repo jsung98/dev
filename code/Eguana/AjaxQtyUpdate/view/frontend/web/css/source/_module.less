@@ -1,0 +1,48 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .ajax-qty-update {
+        .cart {
+            &.actions {
+                .action {
+                    &.update {
+                        display: none;
+                    }
+
+                    &.clear {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .qty-decrease,
+    .qty-increase {
+        .lib-button(
+            @_button-icon-use: true,
+            @_button-font-content: @icon-collapse,
+            @_button-icon-font-size: @font-size__base,
+            @_button-padding: 4px 8px,
+            @_button-line-height: 1,
+            @_button-icon-font-text-hide: true
+        );
+    }
+
+    .qty-increase {
+        .lib-icon-font-symbol(@icon-expand);
+    }
+}

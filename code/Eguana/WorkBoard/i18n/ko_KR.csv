@@ -1,0 +1,97 @@
+Back,Back
+"Delete Board","Delete Board"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Save,Save
+"Save & Duplicate","Save & Duplicate"
+"Save & Close","Save & Close"
+Name,Name
+Add,Add
+Board,Board
+"Manage Board","Manage Board"
+"Board was successfully deleted","Board was successfully deleted"
+"Board could not be deleted","Board could not be deleted"
+"Edit Board","Edit Board"
+"New Board","New Board"
+"A total of %1 board(s) have been deleted.","A total of %1 board(s) have been deleted."
+"A total of %1 Board(s) have been disabled.","A total of %1 Board(s) have been disabled."
+"A total of %1 Board(s) have been enabled.","A total of %1 Board(s) have been enabled."
+"This board no longer exists.","This board no longer exists."
+"The value specified in the URL Key is already exists.
+                        Please use a unique identifier key","The value specified in the URL Key is already exists.
+                        Please use a unique identifier key"
+"No of Selected Stores Are Greater Than No of Selected Categories","No of Selected Stores Are Greater Than No of Selected Categories"
+"No of Selected Categories Are Greater Than No of Selected Stores","No of Selected Categories Are Greater Than No of Selected Stores"
+"The Board URL key can't use capital letters or disallowed symbols. Remove the letters and symbols and try again.","The Board URL key can't use capital letters or disallowed symbols. Remove the letters and symbols and try again."
+"The Board URL key can't use only numbers. Add letters or words and try again.","The Board URL key can't use only numbers. Add letters or words and try again."
+"The board URL key can't use only numbers. Add letters or words and try again.","The board URL key can't use only numbers. Add letters or words and try again."
+"You saved the Board.","You saved the Board."
+"Something went wrong while saving the Board.","Something went wrong while saving the Board."
+"'category is not selected against ' .","'category is not selected against ' ."
+"You duplicated the Board.","You duplicated the Board."
+Enabled,Enabled
+Disabled,Disabled
+"Something went wrong while saving the file(s).","Something went wrong while saving the file(s)."
+"File validation failed.","File validation failed."
+"File can not be saved to the destination folder.","File can not be saved to the destination folder."
+"Could not save the data: %1","Could not save the data: %1"
+"Requested board doesn't exist","Requested board doesn't exist"
+"Unable to remove data %1","Unable to remove data %1"
+Edit,Edit
+Delete,Delete
+"Delete %1","Delete %1"
+"Are you sure you want to delete a %1 record?","Are you sure you want to delete a %1 record?"
+"All Store Views","All Store Views"
+All,All
+"There is no work.","There is no work."
+"We’ve Worked With","We’ve Worked With"
+"Go to work page","Work 페이지로 이동"
+"View more","자세히 보기"
+"Delete image","Delete image"
+"Work Board","Work Board"
+General,General
+"Enable Feature","Enable Feature"
+"No. of board per Page","No. of board per Page"
+"board per Main Page","board per Main Page"
+Categories,Categories
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"An error occurred while deleting record(s).","An error occurred while deleting record(s)."
+"A total of %1 record(s) have been Disable.","A total of %1 record(s) have been Disable."
+"An error occurred while disable selected notice.","An error occurred while disable selected notice."
+"A total of %1 record(s) have been Enable.","A total of %1 record(s) have been Enable."
+"An error occurred while enable notice.","An error occurred while enable notice."
+"Enable Board","Enable Board"
+"Enable Main Board","Enable Main Board"
+"Thumbnail Image","Thumbnail Image"
+"Board in Websites ","Board in Websites "
+"Store View","Store View"
+Category,Category
+Content,Content
+"Search Engine Optimization","Search Engine Optimization"
+"URL key","URL key"
+"Meta Title","Meta Title"
+"Meta Keywords","Meta Keywords"
+"Meta Description","Meta Description"
+"Add New Board","Add New Board"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+Disable,Disable
+Enable,Enable
+ID,ID
+"Board Title","Board Title"
+"URL Key","URL Key"
+Thumbnail,Thumbnail
+Status,Status
+Main_Status,Main_Status
+SubTitle,SubTitle
+Position,Position
+Created,Created
+Modified,Modified
+Board/Event,Board/Event
+Home,Home
+Brand,Brand
+Work,Work
+"Go to previous slide","이전 슬라이드로 이동"
+"Stop autoplay slides","슬라이드 자동재생 중단"
+"Start autoplay slides","슬라이드 자동재생"
+"Move to the next slide","다음 슬라이드로 이동"
+"Work List","Work 목록"

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2019 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm.
+ * User: Rana
+ * Date: 18/09/2022
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Eguana_Base::extensions" title="Eguana Extensions" module="Eguana_Base" sortOrder="60" resource="Eguana_Base::extensions"/>
+        <add id="Eguana_Base::extension" title="Extension Menu" module="Eguana_Base" sortOrder="10" resource="Eguana_Base::extension" parent="Eguana_Base::extensions"/>
+    </menu>
+</config>

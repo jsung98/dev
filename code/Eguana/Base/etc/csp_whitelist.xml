@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2019 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm.
+ * User: Rana
+ * Date: 18/09/2022
+-->
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="connect-src">
+            <values>
+                <value id="staticw2_yotpo_connect_src" type="host">staticw2.yotpo.com</value>
+                <value id="w2_yotpo_connect_src" type="host">w2.yotpo.com</value>
+                <value id="eligibility_wootric_connect-src" type="host">eligibility.wootric.com</value>
+                <value id="channels_magento_connect_src" type="host">channels.magento.com</value>
+                <value id="in_hotjar_connect_src" type="host">in.hotjar.com</value>
+            </values>
+        </policy>
+        <policy id="script-src">
+            <values>
+                <value id="zendesk_script_src" type="host">static.zdassets.com</value>
+                <value id="zendesk_script_general_src" type="host">*.zdassets.com</value>
+                <value id="www_google_script_src" type="host">www.google.com</value>
+                <value id="www_googletagmanager_script_src" type="host">www.googletagmanager.com</value>
+                <value id="www_gstatic_script_src" type="host">www.gstatic.com</value>
+                <value id="maps_gstatic_script_src" type="host">maps.gstatic.com</value>
+                <value id="www_payflowlink_paypal" type="host">*.paypal.com</value>
+                <value id="maps_googleapis_script_src" type="host">maps.googleapis.com</value>
+                <value id="static_hotjar_script_src" type="host">static.hotjar.com</value>
+                <value id="googleads_g_doubleclick_script_src" type="host">googleads.g.doubleclick.net</value>
+                <value id="connect_facebook_script_src" type="host">connect.facebook.net</value>
+                <value id="channels_magento_script_src" type="host">channels.magento.com</value>
+                <value id="cdn_wootric_script_src" type="host">cdn.wootric.com</value>
+                <value id="script_hotjar_script_src" type="host">script.hotjar.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="online_swagger_img_src" type="host">online.swagger.io</value>
+                <value id="validator_swagger_img_src" type="host">validator.swagger.io</value>
+                <value id="cdn_ofsys_img_src" type="host">cdn.ofsys.com</value>
+                <value id="p_yotpo_img_src" type="host">p.yotpo.com</value>
+                <value id="maps_gstatic_img_src" type="host">maps.gstatic.com</value>
+                <value id="maps_googleapis_img_src" type="host">maps.googleapis.com</value>
+                <value id="mageside_img_src" type="host">mageside.com</value>
+                <value id="data" type="host">data:</value>
+                <value id="amcglobal_sc_omtrdc_img_src" type="host">amcglobal.sc.omtrdc.net</value>
+                <value id="www_google_img_src" type="host">www.google.com</value>
+                <value id="www_facebook_img_src" type="host">www.facebook.com</value>
+                <value id="ad_doubleclick_img_src" type="host" >ad.doubleclick.net</value>
+                <value id="adservice_google_img_src" type="host">adservice.google.com</value>
+                <value id="stats_g_doubleclick_img_src" type="host">stats.g.doubleclick.net</value>
+                <value id="www_google_com_img_src" type="host">www.google.com.pk</value>
+            </values>
+        </policy>
+        <policy id="style-src">
+            <values>
+                <value id="fonts_googleapis_style_src" type="host">fonts.googleapis.com</value>
+                <value id="staticw2_yotpo_style_src" type="host">staticw2.yotpo.com</value>
+                <value id="channels_magento_style_src" type="host">channels.magento.com</value>
+            </values>
+        </policy>
+        <policy id="font-src">
+            <values>
+                <value id="g_static_font_src" type="host">fonts.gstatic.com</value>
+                <value id="staticw2_yotpo_font_src" type="host">staticw2.yotpo.com</value>
+                <value id="channels_magento_font_src" type="host">channels.magento.com</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="www_paypal" type="host">www.paypal.com</value>
+                <value id="www_sandbox_paypal" type="host">www.sandbox.paypal.com</value>
+                <value id="www_payflowlink_paypal" type="host">*.paypal.com</value>
+                <value id="www_pcapredict_src" type="host">*.pcapredict.com</value>
+                <value id="vars_hotjar_frame_src" type="host">vars.hotjar.com</value>
+                <value id="www_facebook_frame_src" type="host">www.facebook.com</value>
+                <value id="bid_g_doubleclick_frame_src" type="host">bid.g.doubleclick.net</value>
+            </values>
+        </policy>
+        <policy id="default-src">
+            <values>
+                <value id="fonts_googleapis_default_src" type="host">fonts.googleapis.com</value>
+                <value id="postescanada_canadapost_src" type="host">*.postescanada-canadapost.ca</value>
+            </values>
+        </policy>
+        <policy id="form-action">
+            <values>
+                <value id="www_facebook_form_action" type="host">www.facebook.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

@@ -1,0 +1,51 @@
+Back,Back
+"Update Status","Update Status"
+"Delete contact success.","Delete contact success."
+"An error occurred","An error occurred"
+"Edit Contactus","Edit Contactus"
+Contacts,Contacts
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Status has been updated ","Status has been updated "
+"Your Data has not been Saved","Your Data has not been Saved"
+Pending,Pending
+Processing,Processing
+Approved,Approved
+"Development Project","프로젝트 개발"
+"Maintenance Project","유지운영"
+"Extension Modules","익스텐션 구매"
+Others,기타
+"Could not save the data: %1","Could not save the data: %1"
+"Requested user doesn't exist","Requested user doesn't exist"
+"Unable to remove data %1","Unable to remove data %1"
+"Your Message has been saved ","Your Message has been saved "
+"* Required Fields","* Required Fields"
+"Project Type","프로젝트 유형"
+"Contact Name/Occupancy","회사명/직책"
+"Eguana Commerce","이구아나커머스"
+"Your Name","이름"
+"Hongil Dong","홍길동"
+Email,이메일
+Eguana@gmail.com,Eguana@gmail.com
+Phone,핸드폰번호
+010-1234-5678,010-1234-5678
+Message,문의사항
+"Please tell us more about your project and feel free to share any references.","선호하는 레퍼런스, 프로젝트목적, 웹사이트 방향성, 문의 내용을 자세히 알려주세요."
+"I have read and agree to the privacy policy.<span>(Required)</span>","개인정보 수집 및 이용에 동의합니다. <span>(필수)</span>"
+"Go to Privacy Policy Page","개인정보취급방침 페이지로 이동"
+"Read all","전문보기"
+"I agree to receive marketing communications.<span>(Optional)</span>","이구아나커머스 뉴스레터 수신에 동의합니다. <span>(선택)</span>"
+"Submit your inquiry","프로젝트 문의하기"
+"Contact Us","Contact Us"
+"Email Options","Email Options"
+"Enable Email","Enable Email"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+Delete,Delete
+ID,ID
+Name,Name
+Status,Status
+"Created Date","Created Date"
+"Contact Us Information","Contact Us Information"
+"We appreciate you reaching out to us,<br/>and we will get back to you as soon as possible. Talk to you soon!","연락주셔서 감사합니다. 가능한 한 빨리 연락드리겠습니다.<br/>곧 다시 이야기나눠요!"
+"Back to Home","홈으로 돌아가기"
+"Thank you for contact!","문의접수 완료"

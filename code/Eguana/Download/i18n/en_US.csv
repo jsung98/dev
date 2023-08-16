@@ -1,0 +1,43 @@
+Back,Back
+"Update Status","Update Status"
+"Delete download success.","Delete download success."
+"An error occurred","An error occurred"
+"Edit Download","Edit Download"
+Downloads,Downloads
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Status has been updated ","Status has been updated "
+"Your Data has not been Saved","Your Data has not been Saved"
+"Could not save the data: %1","Could not save the data: %1"
+"Requested user doesn't exist","Requested user doesn't exist"
+"Unable to remove data %1","Unable to remove data %1"
+"* Required Fields","* Required Fields"
+"Contact Name/Occupancy","Contact Name/Occupancy"
+"Eguana Commerce","Eguana Commerce"
+"Your Name","Your Name"
+"Hongil Dong","Hongil Dong"
+Email,Email
+Eguana@gmail.com,Eguana@gmail.com
+Phone,Phone
+010-1234-5678,010-1234-5678
+"I have read and agree to the privacy policy.<span>(Required)</span>","I have read and agree to the privacy policy.<span>(Required)</span>"
+"Go to Privacy Policy Page","Go to Privacy Policy Page"
+"Read all","Read all"
+"I agree to receive marketing communications.<span>(Optional)</span>","I agree to receive marketing communications.<span>(Optional)</span>"
+"Submit your inquiry","Submit your inquiry"
+"The download is complete.","The download is complete."
+title,title
+"Invalid response received. Please try again.","Invalid response received. Please try again."
+"Sorry, something went wrong. Please try again later.","Sorry, something went wrong. Please try again later."
+Download,Download
+"Download Brochure","Download Brochure"
+"Download Options","Download Options"
+"Enable Download","Enable Download"
+"File Upload","File Upload"
+"Download Brochure Information","Download Brochure Information"
+"Download Information","Download Information"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+Delete,Delete
+ID,ID
+Name,Name
+"Created Date","Created Date"

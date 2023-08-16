@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Owais
+ * Date: 12/03/21
+ * Time: 7:00 PM
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="eguana_contact" resource="default" engine="innodb" comment="Eguana Contact Us">
+        <column xsi:type="int" name="contact_id" padding="11" unsigned="true" nullable="false" identity="true"/>
+        <column xsi:type="varchar" name="name" nullable="false" comment="Name"/>
+        <column xsi:type="varchar" name="email" nullable="false" comment="Email"/>
+        <column xsi:type="varchar" name="telephone" nullable="false" comment="Phone Number"/>
+        <column xsi:type="mediumtext" name="companyname" nullable="false" comment="companyname"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id"/>
+        </constraint>
+    </table>
+</schema>

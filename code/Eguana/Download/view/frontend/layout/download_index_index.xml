@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Download Brochure</title>
+        <css src="Eguana_Download::css/download-modal.css" />
+    </head>
+    <referenceBlock name="page.main.title">
+        <action method="setPageTitle">
+            <argument translate="true" name="title" xsi:type="string">Download Brochure</argument>
+        </action>
+    </referenceBlock>
+    <referenceContainer name="content">
+        <block class="Eguana\Download\Block\DownloadForm" name="downloadForm" template="Eguana_Download::download.phtml">
+        </block>
+    </referenceContainer>
+</page>

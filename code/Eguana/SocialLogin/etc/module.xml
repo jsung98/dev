@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyright Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Abbas Ali Butt
+ * Date: 12/01/2023
+ * Time: 5:50 PM
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Eguana_SocialLogin">
+        <sequence>
+            <module name="Eguana_Base"/>
+            <module name="Magento_Customer"/>
+        </sequence>
+    </module>
+</config>

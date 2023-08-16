@@ -1,0 +1,193 @@
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+*/
+
+& when (@media-common = true) {
+    .catalog-category-view .form.contact {
+        .field.choice {
+            .control > div {
+                width: auto;
+            }
+        }
+    }
+
+    .form.contact {
+        .fieldset > .field:first-child {
+            &.choice > label {
+                display: block;
+                margin-bottom: @indent__base;
+            }
+        }
+
+        .field.choice {
+            .control {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-wrap(wrap);
+
+                > div {
+                    margin-bottom: 22px;
+                    width: 50%;
+                }
+            }
+
+            &.type {
+                input[type="checkbox"] {
+                    border-radius: 4px;
+                    height: 24px;
+                    position: relative;
+                    top: @indent__xs;
+                    width: 24px;
+
+                    &:checked:after {
+                        line-height: 22px;
+                        width: 22px;
+                    }
+                }
+            }
+        }
+
+        .actions-toolbar .submit {
+            img {
+                display: inline-block;
+                margin-right: 12px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .contact-index-contactsuccess {
+        .page-main > .page-title-wrapper {
+            .lib-icon-font(
+                @icon-checkmark,
+                @_icon-font-size: 22px,
+                @_icon-font-color: @color-white,
+                @_icon-font-display: block
+            );
+            text-align: center;
+
+            &:before {
+                background: @theme__color__primary;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 32px;
+                width: 64px;
+                height: 64px;
+            }
+
+            .page-title {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+
+//  Mobile
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .contact-index-index {
+        .column:not(.sidebar-main) {
+            .form.contact {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        .column:not(.sidebar-additional) {
+            .form.contact {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+
+    .form.contact {
+        .field.choice {
+            .control > div {
+                width: 100% !important;
+
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
+            }
+
+            &.type {
+                margin-bottom: @indent__xl;
+
+                > label {
+                    display: block;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+
+        .actions-toolbar .submit {
+            img {
+                margin-right: 6px;
+                width: @indent__l;
+            }
+        }
+
+        input[type="checkbox"] {
+            top: auto;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .catalog-category-view .form.contact {
+        .field:not(.type):not(.comment):not(.choice) {
+            width: ~'calc(50% - 15px)';
+
+            &:nth-child(odd) {
+                float: right;
+            }
+
+            &:nth-child(even) {
+                clear: left;
+                float: left;
+            }
+        }
+
+        .field.comment {
+            clear: both;
+            margin-bottom: @indent__xl;
+        }
+
+        .actions-toolbar {
+            margin-top: 94px;
+        }
+
+        .field.choice {
+            .control > div {
+                &:not(:last-child) {
+                    margin-right: 114px;
+                }
+            }
+        }
+    }
+
+    .form.contact {
+        .field.comment textarea {
+            height: 218px;
+        }
+    }
+
+    .contact-index-contactsuccess {
+        .page-main > .page-title-wrapper {
+            &:before {
+                font-size: 46px;
+                width: 128px;
+                height: 128px;
+                margin-bottom: 48px;
+            }
+        }
+    }
+}
+

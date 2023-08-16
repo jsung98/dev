@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Owais
+ * Date: 12/03/21
+ * Time: 7:00 PM
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Eguana_Contactus::contactus" title="Contact Us" translate="title" module="Eguana_Contactus" parent="Eguana_Base::extensions" sortOrder="70" action="eguana_contactus/index/index" resource="Eguana_Contactus::contactus"/>
+    </menu>
+</config>

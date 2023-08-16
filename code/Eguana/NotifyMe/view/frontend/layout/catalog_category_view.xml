@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="category.product.addto">
+                <block class="Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist"
+                       name="category.product.addto.notification" as="notification" before="compare"
+                       template="Eguana_NotifyMe::catalog/product/list/addto/notification.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Eguana\NotifyMe\ViewModel\Notification</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+            <block name="notifyme.popup" template="Eguana_NotifyMe::catalog/product/list/popup.phtml" before="-" />
+            <referenceBlock class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" template="Eguana_NotifyMe::product/list.phtml">
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

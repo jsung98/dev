@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2020 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Owais
+ * Date: 12/03/21
+ * Time: 7:00 PM
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Contact Us</title>
+    </head>
+    <body>
+        <referenceBlock name="contactForm" template="Eguana_Contactus::contactus.phtml">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Eguana\Contactus\ViewModel\UserDataProvider</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

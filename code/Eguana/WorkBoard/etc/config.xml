@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Eguana Team
+ * @copyriht Copyright (c) 2023 Eguana {http://eguanacommerce.com}
+ * Created by PhpStorm
+ * User: Zaid
+ * Date: 12/1/23
+ * Time: 4:27 PM
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <board>
+            <generalconfig>
+                <per_page_board>6</per_page_board>
+                <per_page_board_main>6</per_page_board_main>
+            </generalconfig>
+        </board>
+    </default>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="order.success.additional.info">
+            <block class="Eguana\CheckoutSuccess\Block\Onepage\Success" name="Eguana.order.success" template="Eguana_CheckoutSuccess::success.phtml"
+                   ifconfig="checkout_success/checkout_success_settings/is_enabled">
+            </block>
+        </referenceContainer>
+
+    </body>
+</page>

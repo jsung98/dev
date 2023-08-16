@@ -1,0 +1,16 @@
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="StoreFrontContactUsInputValidationActionGroup">
+        <arguments>
+            <argument name="contactUsInputData"/>
+        </arguments>
+        <amOnPage stepKey="amOnStoreFrontContactUsInputPage" url="{{StoreFrontContactUsInputPage.url}}"/>
+        <click selector="{{StoreFrontContactUsInputSection.clickOnClient}}" stepKey="selectClient"/>
+        <fillField userInput="{{contactUsInputData.Name}}" selector="{{StoreFrontContactUsInputSection.enterName}}" stepKey="EnterName"/>
+        <fillField userInput="{{contactUsInputData.Email}}" selector="{{StoreFrontContactUsInputSection.enterEmail}}" stepKey="EnterEmail"/>
+        <fillField userInput="{{contactUsInputData.Phone}}" selector="{{StoreFrontContactUsInputSection.enterPhone}}" stepKey="EnterPhone"/>
+        <fillField userInput="{{contactUsInputData.Message}}" selector="{{StoreFrontContactUsInputSection.enterMessage}}" stepKey="EnterMessage"/>
+        <click selector="{{StoreFrontContactUsInputSection.clickOnAccept}}" stepKey="AcceptAgreement"/>
+        <click selector="{{StoreFrontContactUsInputSection.clickOnSubmit}}" stepKey="Submit"/>
+
+    </actionGroup>
+</actionGroups>

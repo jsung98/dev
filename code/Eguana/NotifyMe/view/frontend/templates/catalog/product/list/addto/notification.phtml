@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var \Eguana\NotifyMe\ViewModel\Notification $viewModel */
+$viewModel = $block->getData('view_model');
+$product = $block->getProduct();
+$productId = $escaper->escapeHtmlAttr($product->getId());
+$showNotification = $product->getData('show_notification');
+?>
+<?php if ($showNotification) : ?>
+
+    <a href="#" data-mage-init='{
+           "notifyMe": {
+"url": "<?= $viewModel->getNotificationSubmitUrl(); ?>",
+"product_id": "<?= $productId; ?>",
+"alert_class": ".alert-<?= $productId; ?>"
+}
+}'
+       title="<?= $escaper->escapeHtml(__('Notify Me')) ?>" class="action notify alert-<?= $productId; ?>">
+        <span><?= $escaper->escapeHtml(__('Notify Me')) ?></span>
+    </a>
+<?php endif; ?>

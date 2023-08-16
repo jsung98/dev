@@ -1,0 +1,16 @@
+{
+    "eguana_download": {
+        "column": {
+            "download_id": true,
+            "name": true,
+            "email": true,
+            "telephone": true,
+            "companyname": true,
+            "creation_time": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+
+    }
+}

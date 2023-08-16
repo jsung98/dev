@@ -1,0 +1,163 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+use Magento\Framework\App\Action\Action;
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \Magento\CatalogWidget\Block\Product\ProductsList $block */
+/** @var Magento\Framework\Escaper $escaper */
+?>
+<div class="notify-me-modal" style="display: none">
+    <form class="form notification-form" id="notification-form" method="post" data-mage-init='{"validation": {}}'>
+        <input type="hidden" name="product_id" id="product_id" value="">
+        <fieldset class="fieldset">
+            <div class="field note"><?= $block->escapeHtml(__('We will notify you when this product will be available for sale.')) ?></div>
+            <div class="field customer-email required">
+                <label class="label" for="customer_email"><span><?= $escaper->escapeHtml(__('Email')); ?></span></label>
+                <div class="control">
+                    <input type="text" data-validate='{"required":true, "validate-email": true}' placeholder="<?= $block->escapeHtmlAttr(__('Eguana@gmail.com')) ?>" name="customer_email" id="customer_email" value="" class="input-text" >
+                </div>
+            </div>
+            <div class="field customer-mobile required">
+                <label class="label" for="customer_mobile"><span><?= $escaper->escapeHtml(__('Mobile')); ?></span></label>
+                <div class="control">
+                    <input type="text" data-validate='{"required":true, "validate-number": true, "minlength":10}' placeholder="<?= $block->escapeHtmlAttr(__('010-1234-5678')) ?>" name="customer_mobile" id="customer_mobile" value="" class="input-text" />
+                </div>
+            </div>
+            <div class="field choice required">
+                <input type="checkbox" name="privacy_policy" id="privacy-policy" data-role="privacy-policy" value="1" data-validate="{required:true}" class="checkbox required-entry"/>
+                <label for="privacy-policy"
+                       class="label"><span><?= $block->escapeHtml(__('I have read and agree to the privacy policy.<span>(Required)</span>'),['span'])?></span><a title="<?= $block->escapeHtmlAttr(__('Go to Privacy Policy Page')) ?>" href="<?= $block->getUrl('privacy-policy')?>"><?= $block->escapeHtml(__('Read all')) ?></a></label>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<?php
+/**
+ * Product carousel widget template
+ *
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())): ?>
+    <?php
+    $type = 'widget-product-carousel';
+
+    $image = 'new_products_content_widget_grid';
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = false;
+    $showCompare = false;
+    $showCart = true;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    ?>
+    <ol class="product-items <?= /* @noEscape */ $type ?>">
+        <?php $iterator = 1; ?>
+        <?php foreach ($items as $_item):
+
+            $product = $_item;
+            $productId = $escaper->escapeHtmlAttr($product->getId());
+            $showNotification = $product->getData('show_notification');
+            ?>
+            <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+            <div class="product-item-info">
+                <?php if ($showNotification) : ?>
+                    <?= $block->getImage($_item, $image)->toHtml() ?>
+                <?php else:?>
+                    <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
+                        <?= $block->getImage($_item, $image)->toHtml() ?>
+                    </a>
+                <?php endif;?>
+                <div class="product-item-details">
+                    <strong class="product-item-name">
+                        <?php if ($showNotification) : ?>
+                            <?= $block->escapeHtml($_item->getName()) ?>
+                        <?php else:?>
+                            <a title="<?= $block->escapeHtml($_item->getName()) ?>"
+                               href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                               class="product-item-link">
+                                <?= $block->escapeHtml($_item->getName()) ?>
+                            </a>
+                        <?php endif;?>
+                    </strong>
+                    <?php if($_item->getData('ecommerce_platform')): ?>
+                        <label class="product-item-platform <?= $escaper->escapeHtmlAttr(strtolower($_item->getAttributeText('ecommerce_platform')))?>">
+                            <?= $escaper->escapeHtml($_item->getAttributeText('ecommerce_platform'))?>
+                        </label>
+                    <?php endif;?>
+                    <?php if ($templateType): ?>
+                        <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
+                    <?php endif; ?>
+                    <?php if (!$showNotification) : ?>
+                        <?php if($_item->getFinalPrice() > 0):?>
+                            <?= $block->getProductPriceHtml($_item, $type) ?>
+                        <?php else:?>
+                            <div class="price-box">
+                                <span class="price"><?= $escaper->escapeHtml(__('Free')) ?></span>
+                            </div>
+                        <?php endif;?>
+                    <?php endif;?>
+                    <?= $block->getProductDetailsHtml($_item) ?>
+                    <div class="product-item-inner">
+                        <div class="product-item-actions">
+                            <?php if ($showNotification) : ?>
+                                <a href="#" data-mage-init='{
+                                            "notifyMe": {
+                                                "url": "<?= $block->getBaseUrl().'notify/add/guest' ?>",
+                                                "product_id": "<?= $productId; ?>",
+                                                "alert_class": ".alert-<?= $productId; ?>"
+                                                }
+                                            }'
+                                   title="<?= $escaper->escapeHtml(__('Notify Me')) ?>" class="action notify alert-<?= $productId; ?>">
+                                    <span><?= $escaper->escapeHtml(__('Notify Me')) ?></span>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if ($showWishlist || $showCompare || $showCart): ?>
+                                <?php if ($showCart && !$showNotification): ?>
+                                    <div class="actions-primary">
+                                        <?php if ($_item->isSaleable()): ?>
+                                            <?php $postParams = $block->getAddToCartPostParams($_item); ?>
+                                            <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                                                    title="<?= $block->escapeHtml(__('Detail')) ?>"
+                                                    class="action tocart primary">
+                                                <span><?= $block->escapeHtml(__('Detail')) ?></span>
+                                            </a>
+                                        <?php else: ?>
+                                            <?php if ($_item->getIsSalable()): ?>
+                                                <div class="stock available"><span><?= $block->escapeHtml(__('In stock')) ?></span></div>
+                                            <?php else: ?>
+                                                <div class="stock unavailable"><span><?= $block->escapeHtml(__('Out of stock')) ?></span></div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($showWishlist || $showCompare): ?>
+                                    <div class="actions-secondary" data-role="add-to-links">
+                                        <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
+                                            <a href="#"
+                                               data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if ($block->getAddToCompareUrl() && $showCompare): ?>
+                                            <?php $compareHelper = $this->helper(\Magento\Catalog\Helper\Product\Compare::class);?>
+                                            <a href="#" class="action tocompare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_item) ?>' title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>">
+                                                <span><?= $block->escapeHtml(__('Add to Compare')) ?></span>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?= ($iterator == count($items) + 1) ? '</li>' : '' ?>
+        <?php endforeach ?>
+    </ol>
+<?php endif;?>
